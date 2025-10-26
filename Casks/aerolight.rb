@@ -1,6 +1,6 @@
 cask "aerolight" do
-  version "1.0.2"
-  sha256 "bb94d36280c7dea3437314db1765ab58cd2bad911b593e8afc7551a834b2ab01"
+  version "1.0.3"
+  sha256 "a2c2b625aad59c9283e47b1952c75dbc88a444ffd384b66e4e03a4ff538a721f"
 
   url "https://github.com/julius-hell/aerolight/releases/download/v#{version}/Aerolight.app.zip"
   name "Aerolight"
