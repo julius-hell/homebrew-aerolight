@@ -1,19 +1,17 @@
 cask "aerolight" do
-  version "1.0.1"
-  sha256 "a74a239841f7da4369d51851af72fae769710305427fd46ea3211c463257545e"
+  version "1.0.2"
+  sha256 "bb94d36280c7dea3437314db1765ab58cd2bad911b593e8afc7551a834b2ab01"
 
   url "https://github.com/julius-hell/aerolight/releases/download/v#{version}/Aerolight.app.zip"
   name "Aerolight"
-  desc "Spotlight for aerospace"
+  desc "Window switcher for macOS"
   homepage "https://github.com/julius-hell/aerolight"
 
   app "Aerolight.app"
-
   binary "#{appdir}/Aerolight.app/Contents/MacOS/Aerolight", target: "aerolight"
 
   postflight do
-    system_command "/usr/bin/codesign",
-                   args: ["--force", "--deep", "--sign", "-", "#{appdir}/Aerolight.app"]
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/Aerolight.app"]
   end
 end
-
