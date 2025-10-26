@@ -8,5 +8,12 @@ cask "aerolight" do
   homepage "https://github.com/julius-hell/aerolight"
 
   app "Aerolight.app"
+
+  binary "#{appdir}/Aerolight.app/Contents/MacOS/Aerolight", target: "aerolight"
+
+  postflight do
+    system_command "/usr/bin/codesign",
+                   args: ["--force", "--deep", "--sign", "-", "#{appdir}/Aerolight.app"]
+  end
 end
 
